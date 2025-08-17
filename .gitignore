@@ -1,0 +1,9 @@
+# runtime data
+n8n_data/
+qdrant_data/
+out/
+
+# build & IDE
+bin/
+obj/
+.vscode/
