@@ -1,0 +1,116 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -544,
+        -160
+      ],
+      "id": "e2ef947d-e07c-4f99-b363-978c1d08302d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:5000/parse",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"candidateId\": \"local_001\",\n  \"filePath\": \"./samples/001.txt\"\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -320,
+        -160
+      ],
+      "id": "73bd546e-3366-4250-b565-3230d40d9eea",
+      "name": "Parse"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:5000/embed",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"candidateId\": \"={{$node[\\\"Parse\\\"].json[\\\"candidateId\\\"]}}\",\n  \"textBlocks\": {\n    \"titles\": [\"={{$node[\\\"Parse\\\"].json[\\\"sections\\\"][\\\"titles\\\"][0]}}\"]\n  }\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -112,
+        -160
+      ],
+      "id": "92994026-e680-4f09-9e70-0cde95e9205d",
+      "name": "Embed"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:5000/score",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"candidateId\": \"local_001\",\n  \"title\": \"Software Engineer\",\n  \"criteria\": { \"qualifiedIfAnyTitleContains\": [\"software engineer\"] }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        96,
+        -160
+      ],
+      "id": "ac44df7f-a62a-4822-91ef-c3fa79034926",
+      "name": "Score"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Parse",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse": {
+      "main": [
+        [
+          {
+            "node": "Embed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed": {
+      "main": [
+        [
+          {
+            "node": "Score",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3032f369-b1e2-4a28-b6d1-90a28d36dfb5",
+  "meta": {
+    "instanceId": "9e8f5114b551af53f4bb73893d8429349ce84e20028049b1f6dfd28dffd1dd28"
+  },
+  "id": "ljeVNE8SkBhekLVY",
+  "tags": []
+}
