@@ -1,0 +1,98 @@
+# bins/senior_software_developer.yaml
+bin_id: senior_software_developer
+version: 1
+title: "Senior Software Developer (Consulting Experience)"
+
+role_description: |
+  Lead design and delivery of production-grade software. Partner with clients and
+  cross-functional teams to clarify requirements, make architectural decisions,
+  mentor teammates, and drive projects from discovery through deployment.
+
+must_have:
+  skills:
+    # Core engineering competencies (tech-agnostic)
+    - name: Software Engineering Fundamentals
+      min_years: 5
+    - name: System Design / Architecture
+      min_years: 3
+    - name: API Development (REST or GraphQL)
+      min_years: 3
+    - name: Databases (SQL or NoSQL)
+      min_years: 3
+    - name: Cloud (AWS or Azure or GCP)
+      min_years: 2
+    - name: CI/CD
+      min_years: 2
+  certifications: []
+  education: []  # optional: e.g., "BS in CS or related field"
+  location:
+    allowed: ["US", "Canada"]
+    remote_ok: true
+    disallow: []
+  # Additional non-skill constraints for the rules engine
+  experience:
+    consulting_firm_min_years: 1   # has worked at a consulting firm before (≥1 year)
+    client_facing_required: true   # has interfaced directly with clients/stakeholders
+    leadership_required: true      # mentored juniors or led features/streams
+
+nice_to_have:
+  skills:
+    # Languages / platforms (any mix)
+    - name: Java
+      weight: 0.6
+    - name: C#
+      weight: 0.6
+    - name: JavaScript/TypeScript
+      weight: 0.6
+    - name: Python
+      weight: 0.4
+    - name: .NET
+      weight: 0.5
+    - name: Spring Boot
+      weight: 0.4
+    - name: React
+      weight: 0.4
+    - name: Angular
+      weight: 0.3
+    - name: Node.js
+      weight: 0.3
+    - name: Docker
+      weight: 0.4
+    - name: Kubernetes
+      weight: 0.4
+    - name: Terraform / IaC
+      weight: 0.3
+    - name: Message Queues (e.g., Kafka, RabbitMQ)
+      weight: 0.3
+    - name: Observability (Logs/Tracing/Metrics)
+      weight: 0.3
+  certifications:
+    - name: "Cloud Associate/Solutions Architect (AWS/Azure/GCP)"
+      weight: 0.3
+
+years_of_experience:
+  overall_min: 5
+  relevant_min: 4   # years in professional software dev roles
+
+weights:
+  semantic: 0.6
+  rules: 0.4
+
+thresholds:
+  must_have_pass: true
+  min_semantic: 0.55
+  min_final: 0.62
+
+aliases:
+  JS: JavaScript
+  TS: TypeScript
+  Postgres: PostgreSQL
+  MSSQL: SQL Server
+  GKE: Kubernetes
+  AKS: Kubernetes
+  EKS: Kubernetes
+  EC2: AWS
+  S3: AWS
+  Azure DevOps: CI/CD
+  GitHub Actions: CI/CD
+  Gitlab CI: CI/CD
