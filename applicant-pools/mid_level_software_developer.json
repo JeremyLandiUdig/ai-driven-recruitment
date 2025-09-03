@@ -1,0 +1,98 @@
+{
+  "bin": {
+    "id": "mid_level_software_developer",
+    "version": 2,
+    "title": "Mid-Level Software Developer (Consulting Experience)",
+    "role_description": "Contribute to the design, development, and delivery of production-ready software. Collaborate with clients and internal teams to clarify requirements, implement features, and support delivery. Comfortable working independently on well-scoped tasks while seeking guidance on complex challenges.",
+    "criteria": {
+      "must_have": {
+        "skills": [
+          { "name": "Software Engineering Fundamentals", "min_years": 3, "slug": "software_engineering_fundamentals" },
+          { "name": "API Development (REST or GraphQL)", "min_years": 2, "slug": "api_development" },
+          { "name": "Databases (SQL or NoSQL)", "min_years": 2, "slug": "databases" },
+          { "name": "Cloud (AWS or Azure or GCP)", "min_years": 1, "slug": "cloud" },
+          { "name": "CI/CD", "min_years": 1, "slug": "ci_cd" }
+        ],
+        "certifications": [],
+        "education": [],
+        "location": {
+          "allowed": ["US", "Canada"],
+          "remote_ok": true,
+          "disallow": []
+        },
+        "experience": {
+          "consulting_firm_min_years": 1,
+          "client_facing_required": true,
+          "leadership_required": false
+        }
+      },
+      "nice_to_have": {
+        "skills": [
+          { "name": "Java", "weight": 0.5, "slug": "java" },
+          { "name": "C#", "weight": 0.5, "slug": "c_sharp" },
+          { "name": "JavaScript/TypeScript", "weight": 0.5, "slug": "javascript_typescript" },
+          { "name": "Python", "weight": 0.3, "slug": "python" },
+          { "name": ".NET", "weight": 0.4, "slug": "dotnet" },
+          { "name": "React", "weight": 0.3, "slug": "react" },
+          { "name": "Angular", "weight": 0.3, "slug": "angular" },
+          { "name": "Node.js", "weight": 0.3, "slug": "node_js" },
+          { "name": "Docker", "weight": 0.3, "slug": "docker" },
+          { "name": "Kubernetes", "weight": 0.3, "slug": "kubernetes" },
+          { "name": "Terraform / IaC", "weight": 0.2, "slug": "terraform_iac" },
+          { "name": "Observability (Logs/Tracing/Metrics)", "weight": 0.2, "slug": "observability" }
+        ],
+        "certifications": [
+          { "name": "Cloud Associate (AWS/Azure/GCP)", "weight": 0.2, "slug": "cloud_associate" }
+        ]
+      }
+    },
+    "years_of_experience": {
+      "overall_min": 3,
+      "relevant_min": 2
+    },
+    "scoring": {
+      "weights": { "semantic": 0.6, "rules": 0.4 },
+      "thresholds": {
+        "must_have_pass": true,
+        "min_semantic": 0.5,
+        "min_final": 0.58
+      }
+    },
+    "aliases": {
+      "alias_to_canonical": {
+        "js": "JavaScript",
+        "javascript": "JavaScript",
+        "ts": "TypeScript",
+        "typescript": "TypeScript",
+        "postgres": "PostgreSQL",
+        "postgresql": "PostgreSQL",
+        "mssql": "SQL Server",
+        "sql server": "SQL Server",
+        "gke": "Kubernetes",
+        "aks": "Kubernetes",
+        "eks": "Kubernetes",
+        "ec2": "AWS",
+        "s3": "AWS",
+        "azure devops": "CI/CD",
+        "github actions": "CI/CD",
+        "gitlab ci": "CI/CD",
+        "ci cd": "CI/CD",
+        "ci/cd": "CI/CD"
+      },
+      "canonical_to_aliases": {
+        "JavaScript": ["js", "javascript"],
+        "TypeScript": ["ts", "typescript"],
+        "PostgreSQL": ["postgres", "postgresql"],
+        "SQL Server": ["mssql", "sql server"],
+        "Kubernetes": ["gke", "aks", "eks"],
+        "AWS": ["ec2", "s3"],
+        "CI/CD": ["azure devops", "github actions", "gitlab ci", "ci cd", "ci/cd"]
+      },
+      "normalization": {
+        "case": "lower",
+        "strip_chars": [".", ",", "-", "_", "/"],
+        "collapse_whitespace": true
+      }
+    }
+  }
+}
