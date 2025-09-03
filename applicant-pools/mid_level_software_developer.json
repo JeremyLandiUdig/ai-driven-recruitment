@@ -4,9 +4,8 @@
     "version": 1,
     "title": "Mid-Level Software Developer (Consulting Experience)",
     "role_description": "Contribute to the design, development, and delivery of production-ready software. Collaborate with clients and internal teams to clarify requirements, implement features, and support delivery. Comfortable working independently on well-scoped tasks while seeking guidance on complex challenges.",
-      "experience": {
-        "consulting_firm_min_years": 1
-      }
+    "experience": {
+      "consulting_firm_min_years": 1
     }
   }
 }
