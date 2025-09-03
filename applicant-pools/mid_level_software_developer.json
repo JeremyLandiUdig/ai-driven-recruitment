@@ -17,8 +17,7 @@
         "education": [],
         "location": {
           "allowed": ["US", "Canada"],
-          "remote_ok": true,
-          "disallow": []
+          "remote_ok": true
         },
         "experience": {
           "consulting_firm_min_years": 1,
